@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://code.jquery.com/jquery-git.js">
+	</script>
+
+	<style>
+		.divClass {
+			height: 40px;
+			width: 200px;
+			border: 1px solid blue;
+			color: white
+		}
+	</style>
+</head>
+
+<body>
+	<h2 style="color:blue">hello</h2>
+	<div id="parent">
+		This is parent div
+	</div>
+	<div style="height:10px;"></div>
+	<!-- JavaScript function addText() is called to add to parent div-->
+	<input type="button" value="Add <div> Text" onclick="addText()" />
+	<script>
+		<!-- Function to add text in a div element with above styles-->
+		function addText() {
+			$(document).ready(function() {
+
+				var object = {
+					id: "divID",
+					class: "divClass",
+					css: {
+						"color": "Red"
+					}
+				};
+				var addition = $("<div>", object);
+				addition.html("Added text GFG");
+				$("#parent").append(addition);
+			});
+		}
+	</script>
+</body>
+
+</html>
